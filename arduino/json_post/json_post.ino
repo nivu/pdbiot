@@ -6,7 +6,7 @@ const char* ssid = "HWjunction";
 const char* password = "forged@forge";
 
 //Your Domain name with URL path or IP address with path
-const char* serverName = "http://192.168.59.168:5000/api/sensors/add";
+const char* serverName = "http://192.168.59.248:8000/itemlist";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -52,7 +52,8 @@ void loop() {
       
 //       If you need an HTTP request with a content type: application/json, use the following:
       http.addHeader("Content-Type", "application/json");
-      int httpResponseCode = http.POST("{\"analog\":\"10.5\",\"digital\":\"1\",\"battery\":\"24.25\",\"status\":\"Good\"}");
+//      int httpResponseCode = http.POST("{\"analog\":\"10.5\",\"digital\":\"1\",\"battery\":\"24.25\",\"status\":\"sensor1\"}");
+      int httpResponseCode = http.POST("{\"temp\":\"10.5\",\"hum\":\"1\"}");
 
       // If you need an HTTP request with a content type: text/plain
       //http.addHeader("Content-Type", "text/plain");
